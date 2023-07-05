@@ -26,7 +26,13 @@ function generatePassword() {
     if(beforeReady.length === 0) {
       alert("you must choose atleast one type of character to create a password. Pleae retry")
       generatePassword()
+    } else {
+      for(var i = 0; i < passwordLength; i++) {
+        var randomIndex = Math.floor(Math.random() * beforeReady.length)
+        afterReady += beforeReady[randomIndex]
+      }
     }
+    return afterReady
   }
 }
 
