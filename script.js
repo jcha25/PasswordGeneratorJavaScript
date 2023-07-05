@@ -5,7 +5,7 @@ var special = "!@#$%^&*()_+".split("")
 
 function generatePassword() {
   var beforeReady = []
-
+  var afterReady = ""
   var passwordLength = prompt("How long would you like your password to be? (8-128)")
   if(passwordLength < 8 || passwordLength > 128) {
     alert("Your password must be between 8-128 charcters. Please restart")
@@ -23,7 +23,10 @@ function generatePassword() {
     if(confirm("Do you want special characters in your password?")) {
       beforeReady = beforeReady.concat(special)
     }
-    console.log(beforeReady)
+    if(beforeReady.length === 0) {
+      alert("you must choose atleast one type of character to create a password. Pleae retry")
+      generatePassword()
+    }
   }
 }
 
