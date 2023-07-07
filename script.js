@@ -12,6 +12,7 @@ function generatePassword() {
     generatePassword()
   } else {
     if(confirm("Do you want uppercase in your password?")) {
+      // "My name is ".concat("Justice") => "My name is Justice"
       beforeReady = beforeReady.concat(uppercase)
     }
     if(confirm("Do you want lowercase in your password?")) {
@@ -21,7 +22,7 @@ function generatePassword() {
       beforeReady = beforeReady.concat(number)
     }
     if(confirm("Do you want special characters in your password?")) {
-      beforeReady = beforeReady.concat(special)
+      beforeReady = beforeReady.concat(special) 
     }
     if(beforeReady.length === 0) {
       alert("you must choose atleast one type of character to create a password. Pleae retry")
@@ -45,7 +46,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
